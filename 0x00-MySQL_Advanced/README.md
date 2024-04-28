@@ -1,7 +1,5 @@
-0x00. MySQL advanced
-Back-end
-SQL
-MySQL
+#0x00. MySQL advanced
+###Back-end SQL MySQL
  Weight: 1
  Project will start Apr 24, 2024 6:00 AM, must end by Apr 26, 2024 6:00 AM
  Checker will be released at Apr 24, 2024 6:00 PM
