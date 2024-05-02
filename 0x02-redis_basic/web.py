@@ -25,6 +25,7 @@ def count(method: Callable):
 
     return wrapped
 
+
 @count
 def get_page(url: str) -> str:
     """the module to obtain the html"""
