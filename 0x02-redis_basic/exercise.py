@@ -32,7 +32,7 @@ def call_history(method: Callable) -> Callable:
     return wrapped
 
 
-def reply(fn: Callable) -> None:
+def replay(fn: Callable) -> None:
     """Function that display the history of calls"""
     red = redis.Redis()
     function_name = fn.__qualname__
