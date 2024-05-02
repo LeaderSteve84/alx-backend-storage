@@ -43,7 +43,7 @@ def replay(fn: Callable) -> None:
         count = 0
     print(f"{function_name} was called {count} times:")
     inputs = red.lrange(f"{function_name}:inputs", 0, -1)
-    outputs = red.irange(f"{function_name}:outputs", 0, -1)
+    outputs = red.lrange(f"{function_name}:outputs", 0, -1)
     for one, two in zip(inputs, outputs):
         try:
             one = one.decode('utf-8')
