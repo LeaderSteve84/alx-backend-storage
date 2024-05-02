@@ -15,14 +15,14 @@ def count(method: Callable):
     @wraps(method)
     def wrapped(url):
         """function that will count"""
-        expn_count = red.get(f"cached:{url}")
-        if expn_count:
-            return expn_count.decode('utf-8')
+        result = red.get(f"cached:{url}")
+        if result:
+            return result.decode('utf-8')
         else:
             red.incr(f"count:{url}")
-            html = method(url)
-            red.setex(f"cached:{url}", 10, html)
-            return html
+            result = method(url)
+            red.setex(f"cached:{url}", 10, result)
+            return result
 
     return wrapped
 
@@ -30,4 +30,5 @@ def count(method: Callable):
 @count
 def get_page(url: str) -> str:
     """the module to obtain the html"""
-    return requests.get(url).text
+    res = requests.get(url)
+    return res.text
